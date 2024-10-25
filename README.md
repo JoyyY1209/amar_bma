@@ -2,7 +2,7 @@
 
 Amar BMI is BMI calculator.
 
-![screenshot](assets/images/amar bmi sample.png)
+![screenshot](assets/images/sample.png)
 
 
 
