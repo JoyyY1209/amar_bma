@@ -1,6 +1,14 @@
 # amar_bma
 
-A new Flutter project.
+Amar BMI is BMI calculator.
+
+![screenshot](assets/images/amar bmi.png)
+
+i practise to implement,
+-SplashScreen
+-TextField
+-DeopdownButton
+-value pass from page to page 
 
 ## Getting Started
 

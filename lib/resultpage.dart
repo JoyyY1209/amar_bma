@@ -1,3 +1,4 @@
+import 'package:amar_bma/inputpage.dart';
 import 'package:flutter/material.dart';
 import 'package:amar_bma/resultpage.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -34,27 +35,33 @@ class Resultpage extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(height: 30),
-            Container(
-              height: 80,
-              width: 250,
-              decoration:BoxDecoration(
-                color: Colors.green,
-                shape: BoxShape.rectangle,
-                borderRadius: BorderRadius.only(topLeft: Radius.circular(15),bottomRight: Radius.circular(15)),
-              ),
+            GestureDetector(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>Inputpage()));
+              },
+              child: Container(
+                height: 80,
+                width: 250,
+                decoration:BoxDecoration(
+                  color: Colors.indigo[600],   ///
+                  shape: BoxShape.rectangle,
+                  borderRadius: BorderRadius.only(topLeft: Radius.circular(15),bottomRight: Radius.circular(15)),
+                ),
 
-              child: Center(
-                child: Text("Amar BMA",
-                  style: GoogleFonts.bowlbyOne(fontSize: 30,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),),
+                child: Center(
+                  child: Text("Amar BMA",
+                    style: GoogleFonts.bowlbyOne(fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),),
+                ),
               ),
             ),
             SizedBox(height: 20,),
 
 
             Row(
-              //crossAxisAlignment: CrossAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
 
               children: [
 
@@ -62,8 +69,12 @@ class Resultpage extends StatelessWidget {
                 SizedBox(width: 5,),
                 Text("Age : $age",style: GoogleFonts.teko(fontSize: 20),textAlign: TextAlign.left,),
               ],
-            ),SizedBox(height: 10,),
+            ),
+            SizedBox(height: 10,),
+
             Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
 
               children: [
 
@@ -73,28 +84,38 @@ class Resultpage extends StatelessWidget {
                 SizedBox(width: 5,),
                 Text("Height : $height",style: GoogleFonts.teko(fontSize: 20),textAlign: TextAlign.left,),
               ],
-            ),SizedBox(height: 10,),
+            ),
+            SizedBox(height: 10,),
+
             Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+
               children: [
                 SvgPicture.asset("assets/icons/weight.svg",height: 30,width: 30,),
                 SizedBox(width: 5),
                 Text("Weight : $weight",style: GoogleFonts.teko(fontSize: 20),)
               ],
-            ),SizedBox(height: 10,),
+            ),
+            SizedBox(height: 10,),
+
             Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SvgPicture.asset("assets/icons/gender.svg",height: 30,width: 30,),
                 SizedBox(width: 5,),
                 Text("Gender : $gender",style: GoogleFonts.teko(fontSize: 20),)
               ],
-            ),SizedBox(height: 10,),
+            ),
+            SizedBox(height: 10,),
 
             SizedBox(height: 10,),
             Container(
               height: 40,
               width: 350,
               decoration:BoxDecoration(
-                color: Colors.green[400],
+                color: Colors.indigo[400],
                 shape: BoxShape.rectangle,
                 borderRadius: BorderRadius.circular(20),
                 border: Border.all(
@@ -115,6 +136,25 @@ class Resultpage extends StatelessWidget {
             Container(
               child: Text("Your BMI is ${bmi.toStringAsFixed(2)}",
               style: GoogleFonts.silkscreen(fontSize: 16,color: Colors.black,fontWeight: FontWeight.bold),),
+            ),
+
+            SizedBox(height: 60,),
+            GestureDetector(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>Inputpage()));
+              },
+              child:Container(
+                height: 50,
+                width: 50,
+                decoration:BoxDecoration(
+                  color: Colors.indigo[700],
+                  shape: BoxShape.circle,
+
+                ),
+
+                child: Icon(Icons.home_rounded,weight: 50,color: Colors.white70,),
+              ),
+              //
             ),
 
 
