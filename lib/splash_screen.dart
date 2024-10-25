@@ -13,7 +13,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
 
   startTimer() async{       //ei funtion ta splash screen kotokkhn thakbe oitar jonno
-    Timer(Duration(seconds: 1),(){
+    Timer(Duration(seconds: 5),(){
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Inputpage()));
 
     });
@@ -31,13 +31,13 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       body: Center(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          //crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
 
             ClipRRect(
               borderRadius: BorderRadius.circular(20),
-              child:Image.asset("assets/images/BMI.png",height: 100,width: 100,),
+              child:Image.asset("assets/images/BMI.png",height: 70,width: 70,),
             ),
 
             // ClipOval(
@@ -46,23 +46,40 @@ class _SplashScreenState extends State<SplashScreen> {
             // ),
             //Image.asset("assets/images/BMI.png",height: 100,width: 100,),
             SizedBox(height: 10,),
-            Text("Amar BMA",
-            style: GoogleFonts.dancingScript(
-              fontSize: 30,
-              fontWeight: FontWeight.w800,
-              color: Colors.green[500],
-            ),),
+            Container(
+              height: 60,
+              width: 180,
+              decoration: BoxDecoration(
+                //color: Colors.indigo[400],
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(15),
+                  bottomRight: Radius.circular(15),
+                ),
+              ),
+              child: Center(
+                child: Text(
+                  "Amar BMI",
+                  style: GoogleFonts.bowlbyOne(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.indigo,
+                  ),
+                ),
+              ),
+            ),
             SizedBox(height: 10,),
             CircularProgressIndicator(
-              color: Colors.green,
+              color: Colors.indigo.withOpacity(.5),
             ),
 
             //Spacer(),
+            SizedBox(height: 50,),
             Text("Shasthoi Shokol Shukher MUL",style: GoogleFonts.acme(
               fontWeight: FontWeight.bold,
               fontSize: 18,
-              color: Colors.green[300],
+              color: Colors.indigo[400],
             )),
+
           ],
         ),
       ),
